@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SWAndroidHilt</string>
+    <string name="title_home">Home</string>
+    <string name="title_characters_list">Characters</string>
+    <string name="title_character_details">Character</string>
+    <string name="title_movies_list">Movies</string>
+    <string name="title_movie_details">Movie</string>
+</resources>

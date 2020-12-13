@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.swandroidhilt.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_characters_list"
+        android:name="com.example.swandroidhilt.ui.characters.list.CharactersListFragment"
+        android:label="@string/title_characters_list"
+        tools:layout="@layout/fragment_characters_list" >
+        <action
+            android:id="@+id/action_navigation_characters_list_to_navigation_character_details"
+            app:destination="@id/navigation_character_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_movies_list"
+        android:name="com.example.swandroidhilt.ui.movies.list.MoviesListFragment"
+        android:label="@string/title_movies_list"
+        tools:layout="@layout/fragment_movies_list" >
+        <action
+            android:id="@+id/action_navigation_movies_list_to_navigation_movie_details"
+            app:destination="@id/navigation_movie_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_character_details"
+        android:name="com.example.swandroidhilt.ui.characters.details.CharacterDetailsFragment"
+        android:label="@string/title_character_details"
+        tools:layout="@layout/fragment_character_details">
+
+        <argument
+            android:name="character_id"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_navigation_character_details_to_navigation_characters_list"
+            app:destination="@id/navigation_characters_list" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_movie_details"
+        android:name="com.example.swandroidhilt.ui.movies.details.MovieDetailsFragment"
+        android:label="@string/title_movie_details"
+        tools:layout="@layout/fragment_movie_details">
+
+        <argument
+            android:name="movie_id"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_navigation_movie_details_to_navigation_movies_list"
+            app:destination="@id/navigation_movies_list" />
+
+    </fragment>
+</navigation>
